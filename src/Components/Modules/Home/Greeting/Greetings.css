@@ -1,0 +1,12 @@
+.greeting
+{
+    text-decoration: underline;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    display: inline;
+    font-size: 1.6rem;
+    margin-right: 10px;
+}
+
+

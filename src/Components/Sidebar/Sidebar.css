@@ -1,0 +1,81 @@
+.navbar{
+    height: 80px; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-menu
+{
+    width: 130px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed; 
+    top: 0; 
+    left:0;
+}
+
+.nav-text
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+.nav-text a{
+    text-decoration: none;
+    font-size: 18px; 
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+    color: black;
+}
+
+.nav-text a:hover{
+    background-color: azure;
+}
+
+.nav-menu-items 
+{
+    width: 100%;
+}
+span{
+    margin-left: 10px;
+}
+
+.image
+{
+    height: 70px;
+    margin-top: 30px;
+    margin-left:25px;
+}
+
+.searchbar
+{
+    width: 18%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    position: fixed;
+    top:0;
+    margin-top:20px; 
+    right:0;
+    margin-right:10px;
+}
+
+.bootstrap-btn
+{
+    color:black;
+}
+.bootstrap-btn:hover
+{
+background-color: azure;
+color: black;
+}

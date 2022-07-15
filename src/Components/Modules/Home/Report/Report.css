@@ -1,0 +1,26 @@
+.reportcontainer
+{
+    border: 1px solid rgb(114, 109, 109);
+    border-radius: 1%;
+    width:500px;
+    height:500px;
+    margin-left: 0px;
+    margin-top: 30px;
+    box-shadow: 1px 1px rgb(83, 81, 81) ;
+}
+
+.bold
+{
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+    padding-top: 10px;
+}
+
+.chart 
+{
+    width: 430px;
+    margin:auto;
+}
