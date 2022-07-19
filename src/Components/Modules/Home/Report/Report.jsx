@@ -6,7 +6,7 @@ function Report() {
 
   
   return (
-    <div className="container reportcontainer">
+    <div className="reportcontainer">
      <span className="bold">
        Here's your daily summary
      </span>

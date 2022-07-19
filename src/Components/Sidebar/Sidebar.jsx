@@ -1,11 +1,18 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 import './Sidebar.css'
 import { Sidebardata } from "./Sidebardata";
 import LogoutIcon from '@mui/icons-material/Logout';
 
 export default function Sidebar() 
 {
+  const handleClick = (e)=>{
+      e.preventDefault()
+  }
+
+  const activestyle = {
+    backgroundColor: 'azure'
+  }
   
     return (<>
       <div className = 'navbar'>
@@ -21,16 +28,22 @@ export default function Sidebar()
            return ( 
             <div  key={index}>
             <li id = {index} className = {item.cName}>
-              <Link to = {item.path}>
+              <NavLink to = {item.path}
+              style={
+                ({isActive})=>{
+                   return isActive? activestyle : null;
+                }
+              }
+              >
                 {item.icon}
                 <span>{item.title}</span>
-              </Link>
+              </NavLink>
             </li>
             <hr />
             </div>
             )
           })}
-          <li className="nav-text">
+          <li className="nav-text" style={{color:'rgb(64, 64, 64)'}}>
            <button className="btn btn-outline-primary bootstrap-btn btn-sm"><LogoutIcon/> Logout</button>
           </li>
         </ul>
@@ -39,7 +52,7 @@ export default function Sidebar()
      <div className="searchbar">
      <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search Product Here" aria-label="Search"/>
-        <button className="btn btn-outline-primary bootstrap-btn" type="submit">Search</button>
+        <button onClick={handleClick} className="btn btn-outline-primary bootstrap-btn" type="submit">Search</button>
       </form>
      </div>
     </>)

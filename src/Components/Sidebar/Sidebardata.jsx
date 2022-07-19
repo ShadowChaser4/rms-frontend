@@ -1,8 +1,7 @@
 import React from 'react'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import HomeIcon from '@mui/icons-material/Home';
-import SummarizeIcon from '@mui/icons-material/Summarize';
-
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+import WarehouseIcon from '@mui/icons-material/Warehouse';
 
 
 
@@ -16,13 +15,13 @@ export const Sidebardata = [
     {
         title: 'Reports', 
         path: '/reports', 
-        icon: <SummarizeIcon/>, 
+        icon: <AnalyticsIcon/>, 
         cName: 'nav-text'
     }, 
     {
-        title: 'Products', 
-        path: '/products', 
-        icon: <ShoppingCartIcon/>, 
+        title: 'Inventory', 
+        path: '/inventory', 
+        icon: <WarehouseIcon/>, 
         cName: 'nav-text'
     }, 
 ]

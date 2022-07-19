@@ -3,10 +3,10 @@ import '../../Components.css'
 
 
 
-function Products() {
+function Inventory() {
   return (
     <div className='contents'>Products</div>
   )
 }
 
-export default Products
+export default Inventory
