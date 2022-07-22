@@ -4,15 +4,13 @@ import {Pie} from 'react-chartjs-2'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const items =  ['mops',  'cosmetics','food and bevrage']
-const itemsdata = [100,200,600]
 
 const colorsArray = [
   'rgba(255, 99, 132, 0.4)',
   'rgba(54, 162, 235, 0.4)',
   'rgba(255, 206, 86, 0.4)'
  ]
-function Chart () {
+function Chart ({itemsdata, items}) {
     const data = {
         labels :items, 
         datasets:[{

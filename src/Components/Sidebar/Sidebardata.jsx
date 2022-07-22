@@ -1,7 +1,7 @@
 import React from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
-import WarehouseIcon from '@mui/icons-material/Warehouse';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
 
 
@@ -21,7 +21,7 @@ export const Sidebardata = [
     {
         title: 'Inventory', 
         path: '/inventory', 
-        icon: <WarehouseIcon/>, 
+        icon: <AccountBalanceIcon/>, 
         cName: 'nav-text'
     }, 
 ]

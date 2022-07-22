@@ -1,7 +1,7 @@
 import React from 'react'
 import './Circle.css'
 function Circle({size}) {
-  const color = (size > 30)? 'green': 'orange'
+  const color = (size > 30)? 'green': null;
   return (
     <div className='circlecontainer'>
       <div className="boldit">Inventory filled:</div>

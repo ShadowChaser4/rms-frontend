@@ -1,5 +1,5 @@
 .navbar{
-    height: 80px; 
+    height: 30px; 
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -7,7 +7,7 @@
 
 .nav-menu
 {
-    width: 130px;
+    width: 100px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@
 
 .nav-text a{
     text-decoration: none;
-    font-size: 18px; 
+    font-size: 14px; 
     width: 95%;
     height: 100%;
     display: flex;
@@ -47,7 +47,7 @@
 {
     width: 100%;
 }
-span{
+.span{
     margin-left: 10px;
 }
 
@@ -58,18 +58,6 @@ span{
     margin-left:25px;
 }
 
-.searchbar
-{
-    width: 18%;
-    display: flex;
-    justify-content: flex-end;
-    align-content: flex-end;
-    position: fixed;
-    top:0;
-    margin-top:20px; 
-    right:0;
-    margin-right:10px;
-}
 
 .bootstrap-btn
 {
@@ -79,4 +67,9 @@ span{
 {
 background-color: azure;
 color: black;
+}
+
+.icon
+{
+    font-size: small;
 }

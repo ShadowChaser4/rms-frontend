@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import {NavLink, Link} from 'react-router-dom'
 import './Sidebar.css'
 import { Sidebardata } from "./Sidebardata";
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import LoginContext from "../../LoginContext js/LoginContext";
 export default function Sidebar() 
 {
-  const handleClick = (e)=>{
-      e.preventDefault()
-  }
-
   const activestyle = {
     backgroundColor: 'azure'
   }
+  
+  const {handleclick} = useContext(LoginContext)
   
     return (<>
       <div className = 'navbar'>
@@ -35,8 +33,8 @@ export default function Sidebar()
                 }
               }
               >
-                {item.icon}
-                <span>{item.title}</span>
+                <span className="icon">{item.icon}</span>
+                <span className="span">{item.title}</span>
               </NavLink>
             </li>
             <hr />
@@ -44,16 +42,10 @@ export default function Sidebar()
             )
           })}
           <li className="nav-text" style={{color:'rgb(64, 64, 64)'}}>
-           <button className="btn btn-outline-primary bootstrap-btn btn-sm"><LogoutIcon/> Logout</button>
+           <button className="btn btn-outline-primary bootstrap-btn btn-sm" onClick={handleclick} ><LogoutIcon/> Logout</button>
           </li>
         </ul>
        </nav>
       </div>
-     <div className="searchbar">
-     <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search Product Here" aria-label="Search"/>
-        <button onClick={handleClick} className="btn btn-outline-primary bootstrap-btn" type="submit">Search</button>
-      </form>
-     </div>
     </>)
 }

@@ -8,7 +8,7 @@ import Selection from './Selection'
 function Daily()
 {
   return(
-    <div style={{marginLeft:'250px',
+    <div style={{marginLeft:'0px',
     marginTop:'100px'}}>
       Daily
     </div>
