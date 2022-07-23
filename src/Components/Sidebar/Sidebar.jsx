@@ -10,7 +10,7 @@ export default function Sidebar()
     backgroundColor: 'azure'
   }
   
-  const {handleclick} = useContext(LoginContext)
+  const {handleLogout} = useContext(LoginContext)
   
     return (<>
       <div className = 'navbar'>
@@ -42,7 +42,7 @@ export default function Sidebar()
             )
           })}
           <li className="nav-text" style={{color:'rgb(64, 64, 64)'}}>
-           <button className="btn btn-outline-primary bootstrap-btn btn-sm" onClick={handleclick} ><LogoutIcon/> Logout</button>
+           <button className="btn btn-outline-primary bootstrap-btn btn-sm" onClick={handleLogout} ><LogoutIcon/> Logout</button>
           </li>
         </ul>
        </nav>

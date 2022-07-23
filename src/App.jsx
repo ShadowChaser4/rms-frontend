@@ -7,16 +7,10 @@ import Home from "./Components/Modules/Home/Home";
 import './App.css'
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import Somestate from "./LoginContext js/LoginState";
+import Login from "./Components/LoginComponent/Login";
 
 function App() {
-  function Login()
-  {
-    return(
-      <div style={{margin:'30px 0px 0px 250px'}}>
-        Login
-      </div>
-    )
-  }
+  
   return (
    <>
    <Somestate>
