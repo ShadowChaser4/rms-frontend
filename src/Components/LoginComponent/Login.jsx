@@ -17,21 +17,19 @@ function Login()
     }
 
     return(
-      <div style={{margin:'30px 0px 0px 250px'}}>
-        <form onSubmit={loginhandler}>
-    <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div className="form-floating">
-      <input type="email" name = "username"  value = {credentials.username} onChange = {changehandler}className="form-control" id="floatingInput" placeholder="name@example.com"/>
-      <label htmlFor="floatingInput">Email address</label>
-    </div>
-    <div className="form-floating">
-      <input type="password" className="form-control" name = "password" onChange = {changehandler} value={credentials.password}id="floatingPassword" placeholder="Password"/>
-      <label htmlFor="floatingPassword">Password</label>
-    </div>
-    <button className="w-100 btn btn-lg btn-primary" style={{margin:'20px'}} type="submit">Sign in</button>
-  </form>
-      </div>
+      <>
+        <div className="container formcontainer"  style={{marginLeft:'400px', marginTop:'100px', textAlign:'center'}}>
+         <form action="" onSubmit = {loginhandler}className="myform">
+          <label htmlFor="email" id = 'email' >Email:
+          <input type="email" name='username' className='email' placeholder = 'Enter your email here'onChange={changehandler}  value = {credentials.username}/>
+          </label>
+          <label htmlFor="password" id="password" >Password:
+          <input type="password" name="password" className='password' placeholder='Enter your password here' onChange={changehandler} value = {credentials.password} />
+          </label>
+          <button type="submit" style={{backgroundColor:'white',color:'black', borderRadius:'0.7rem', display:'block', margin:'auto'}}>Submit</button>
+         </form>
+        </div>
+      </>
     )
   }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../../Components.css'
 import Greeting from './Greeting/Greeting'
 import './Report/Report'
@@ -6,12 +6,14 @@ import Report from './Report/Report'
 import './Home.css'
 import Circle from './Circle/Circle'
 import TotalSales from './TotalSales/TotalSales'
+import usercontext from '../../../Userdatacontext/Userdatacontext'
 
 
 function Home() {
+  const a = useContext(usercontext)
   return (
   <div className='contents'>
-    <Greeting name = 'Kushal'/>
+    <Greeting name = {a.user.name}/>
     <div className="flexbox">
        <div className="">
            <Report/>

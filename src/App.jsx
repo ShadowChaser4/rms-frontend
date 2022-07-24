@@ -8,11 +8,13 @@ import './App.css'
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import Somestate from "./LoginContext js/LoginState";
 import Login from "./Components/LoginComponent/Login";
+import Userdatastate from "./Userdatacontext/Userdatastate";
 
 function App() {
   
   return (
    <>
+    <Userdatastate>
    <Somestate>
 
    <Sidebar/>
@@ -24,7 +26,9 @@ function App() {
         <Route exact path = '/reports/*' element = {<Reports/>}/>
    </Route>
    </Routes>
+
    </Somestate>
+   </Userdatastate>
    
    </>
   );
