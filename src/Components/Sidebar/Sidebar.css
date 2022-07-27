@@ -7,7 +7,7 @@
 
 .nav-menu
 {
-    width: 100px;
+    width:200px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -35,12 +35,13 @@
     align-items: center;
     padding: 0 16px;
     border-radius: 4px;
-    color: rgb(64, 64, 64);
+    color:black;
 
 }
 
 .nav-text a:hover{
-    background-color: azure;
+    background-color: rgb(8, 108, 133);
+    color: whitesmoke;
 }
 
 .nav-menu-items 
@@ -63,10 +64,11 @@
 {
     color:black;
 }
+
 .bootstrap-btn:hover
 {
-background-color: azure;
-color: black;
+    background-color: rgb(8, 108, 133);
+    color: whitesmoke;
 }
 
 .icon

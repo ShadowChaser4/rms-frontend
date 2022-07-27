@@ -6,9 +6,9 @@ import Reports from "./Components/Modules/Reports/Reports";
 import Home from "./Components/Modules/Home/Home";
 import './App.css'
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
-import Somestate from "./LoginContext js/LoginState";
+import Somestate from "./Contexts/LoginContext js/LoginState";
 import Login from "./Components/LoginComponent/Login";
-import Userdatastate from "./Userdatacontext/Userdatastate";
+import Userdatastate from "./Contexts/Userdatacontext/Userdatastate";
 
 function App() {
   
@@ -21,9 +21,9 @@ function App() {
    <Routes>
    <Route path = '/login' element = {<Login/>}/>
    <Route element = {<PrivateRoutes/>}>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact  path = "/inventory" element = {<Inventory/>}/>
-        <Route exact path = '/reports/*' element = {<Reports/>}/>
+        <Route exact path="/app/home" element={<Home/>}/>
+        <Route exact  path = "/app/inventory" element = {<Inventory/>}/>
+        <Route exact path = '/app/reports/*' element = {<Reports/>}/>
    </Route>
    </Routes>
 

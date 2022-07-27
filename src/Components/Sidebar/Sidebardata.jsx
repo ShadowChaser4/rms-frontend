@@ -8,19 +8,19 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 export const Sidebardata = [
     {
         title: 'Home', 
-        path: '/', 
+        path: '/app/home', 
         icon: <HomeIcon/>, 
         cName: 'nav-text'
     },
     {
         title: 'Reports', 
-        path: '/reports', 
+        path: '/app/reports', 
         icon: <AnalyticsIcon/>, 
         cName: 'nav-text'
     }, 
     {
         title: 'Inventory', 
-        path: '/inventory', 
+        path: '/app/inventory', 
         icon: <AccountBalanceIcon/>, 
         cName: 'nav-text'
     }, 

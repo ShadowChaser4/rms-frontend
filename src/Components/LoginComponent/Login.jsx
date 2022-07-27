@@ -1,12 +1,16 @@
-import React, {useContext} from 'react'
-import LoginContext from '../../LoginContext js/LoginContext'
+import React, {useContext, useEffect} from 'react'
+import LoginContext from '../../Contexts/LoginContext js/LoginContext'
 import './Login.css'
 
 
 function Login()
   {
 
-    const {changecredentials, credentials,loginhandler} = useContext(LoginContext)
+    const {changecredentials, credentials,loginhandler,islogged} = useContext(LoginContext)
+
+    useEffect(()=>{
+      islogged()
+    },[])
 
     function changehandler (e) 
     {

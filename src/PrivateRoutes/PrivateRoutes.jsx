@@ -1,6 +1,6 @@
 import React , {useContext} from 'react'
 import {Navigate, Outlet} from 'react-router-dom'
-import LoginContext from '../LoginContext js/LoginContext'
+import LoginContext from '../Contexts/LoginContext js/LoginContext'
 
 
 function PrivateRoutes() {
