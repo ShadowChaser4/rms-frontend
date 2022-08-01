@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from './Components/Sidebar/Sidebar';
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, Navigate} from 'react-router-dom'
 import Inventory from "./Components/Modules/Inventory/Inventory";
 import Reports from "./Components/Modules/Reports/Reports";
 import Home from "./Components/Modules/Home/Home";
@@ -21,6 +21,7 @@ function App() {
    <Routes>
    <Route path = '/login' element = {<Login/>}/>
    <Route element = {<PrivateRoutes/>}>
+        <Route path="/" element = {<Navigate to='/app/home'/>}/>
         <Route exact path="/app/home" element={<Home/>}/>
         <Route exact  path = "/app/inventory" element = {<Inventory/>}/>
         <Route exact path = '/app/reports/*' element = {<Reports/>}/>

@@ -9,3 +9,15 @@
     padding: 0px 20px 20px 20px;
     box-shadow: 1px 1px rgb(183,184,184);
 }
+.greeting
+{
+    text-decoration: underline;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    display: inline;
+    font-size: 1.6rem;
+    margin-right: 10px;
+}
+
+

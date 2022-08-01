@@ -1,15 +1,21 @@
-import React, {useContext, useEffect} from 'react'
-import LoginContext from '../../Contexts/LoginContext js/LoginContext'
+import React, {useContext, useEffect, useState} from 'react'
 import './Login.css'
-
+import usercontext from '../../Contexts/Userdatacontext/Userdatacontext'
+import islogged from './islogged'
+import { useNavigate } from 'react-router-dom'
+import LoginContext from '../../Contexts/LoginContext js/LoginContext'
+import logit from './logit'
 
 function Login()
   {
 
-    const {changecredentials, credentials,loginhandler,islogged} = useContext(LoginContext)
+   const [credentials, changecredentials] = useState({username:'', password:''})
+   const user = useContext(usercontext)
+   const navigate = useNavigate()
+   const {changestate} = useContext(LoginContext)
 
     useEffect(()=>{
-      islogged()
+      islogged(user,navigate,changestate)
     },[])
 
     function changehandler (e) 
@@ -18,6 +24,22 @@ function Login()
       changecredentials((prev)=>{
         return {...prev, [name]:value}
       })
+    }
+
+
+    async function loginhandler(e)
+    {
+      try{
+        e.preventDefault()
+
+        logit(user,changestate,navigate,credentials)
+   
+      }
+      catch(error)
+      {
+        console.log(error)
+      }
+        
     }
 
     return(

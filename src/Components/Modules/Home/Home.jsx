@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import '../../Components.css'
-import Greeting from './Greeting/Greeting'
 import './Report/Report'
 import Report from './Report/Report'
 import './Home.css'
@@ -13,7 +12,11 @@ function Home() {
   const a = useContext(usercontext)
   return (
   <div className='contents'>
-    <Greeting name = {a.user.name}/>
+    <h5 className='greeting'>
+        {(hours < 12)?"Good morning": (hours >= 19)?"Good night":"Good afternoon"}
+    </h5> <h4 className='greeting'>
+    <strong>{a.user.name}</strong>
+    </h4>
     <div className="flexbox">
        <div className="">
            <Report/>
