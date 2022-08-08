@@ -1,0 +1,152 @@
+.navbar{
+    height: 0px; 
+    display: flex;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-bar
+{
+    display: inline;
+    position:fixed;
+    margin-left:10px;
+    margin-top:30px;
+    cursor: pointer;
+    background-color: white;
+    z-index: 1;
+}
+@keyframes remove {
+    0%{
+        width: 200px;
+    }
+    25%
+    {
+        width: 150px;
+    }
+    50%
+    {
+        width: 100px;
+    }
+    75%
+    {
+        width: 50px;
+    }
+    100%{
+        width: 0px;
+    }
+}
+.nav-menu
+{
+    width:200px;
+    height: 100vh;
+    justify-content: center;
+    position: fixed; 
+    top: 0; 
+    left:0;
+    animation-name:remove;
+    animation-duration: 50ms;
+    animation-delay: 80ms;
+    display: none;
+    background-color: white;
+}
+
+@keyframes sidebaranimation {
+   0%{
+    width:0%;
+   }
+   25%
+   {
+    width:25%;
+   }
+   50%{
+    width: 50%;
+   }
+   75%{
+    width: 75%;
+   }
+   100%{
+    width: 100%;
+   }
+}
+
+.active
+{
+   
+    display: flex;
+    animation-name: sidebaranimation;
+    animation-duration: 10ms;
+    animation-delay: 2ms;
+    z-index: 1;
+}
+
+.nav-text
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+.nav-text a{
+    text-decoration: none;
+    font-size: 14px; 
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+    color:black;
+
+}
+
+.nav-text a:hover{
+    background-color: rgb(8, 108, 133);
+    color: whitesmoke;
+}
+
+.nav-menu-items 
+{
+    width: 100%;
+}
+.span{
+    margin-left: 10px;
+}
+
+.image
+{
+    height: 70px;
+    margin-top: 30px;
+    margin-left:25px;
+}
+
+
+.bootstrap-btn
+{
+    color:black;
+}
+
+.bootstrap-btn:hover
+{
+    background-color: rgb(8, 108, 133);
+    color: whitesmoke;
+}
+
+.icon
+{
+    font-size: small;
+}
+
+.densityicon
+{
+    background-color: black;
+    color:white;
+    padding: 9px;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+

@@ -1,0 +1,37 @@
+.cards 
+{
+    border:1px solid grey;
+    box-shadow: 5px 5px  rgb(206, 199, 199);
+    padding: 20px;
+    width: 190px;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    margin: 5px 10px 2px 10px;
+  
+   
+}
+
+
+.cards:hover
+{ 
+    border: 2px solid rgb(0,0,189,0.3);
+    box-shadow: 5px 5px  rgb(162, 158, 158);
+    padding: 20px;
+    width: 190px;
+    border-radius: 1rem;
+}
+.cards > p 
+{
+    font-weight: 445;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* @media screen and (max-width:950px) {
+    .cards {
+        margin-left:0px ;
+        margin-right: 5px;
+    }
+} */

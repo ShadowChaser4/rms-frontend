@@ -1,37 +1,106 @@
 import React, { useContext } from 'react'
-import '../../Components.css'
-import './Report/Report'
-import Report from './Report/Report'
-import './Home.css'
-import Circle from './Circle/Circle'
-import TotalSales from './TotalSales/TotalSales'
 import usercontext from '../../../Contexts/Userdatacontext/Userdatacontext'
+import '../../../Styles/Components.css'
+import '../../../Styles/Home.css'
+import actions from './Actionbuttondata'
+import Actionbuttons from './Actionbuttons'
+import './Cards'
+import Cards from './Cards'
+import './Cardsdata'
+import Cardsdata from './Cardsdata'
+import Chart from './Chart'
 
 
 function Home() {
-  const a = useContext(usercontext)
+  const Hour = new Date().getHours()
+
+  const {user}= useContext(usercontext)
+
+  const solditems = ['Breakfast', 'Clothes', 'Cosmetics', 'Bevrages', 'Foods', 'Cleaning items']
+  const soldunits = [12, 19, 3, 5, 2, 3]
   return (
-  <div className='contents'>
-    <h5 className='greeting'>
-        {(hours < 12)?"Good morning": (hours >= 19)?"Good night":"Good afternoon"}
-    </h5> <h4 className='greeting'>
-    <strong>{a.user.name}</strong>
-    </h4>
-    <div className="flexbox">
-       <div className="">
-           <Report/>
-        </div>
-        <div className="anothercontainer">
-        <div className="circle">
-            <Circle size={50}/>
-          </div>
-          <div className="">
-        <TotalSales sales={7000}/>
+    <div className='contents flexbox'>
+
+
+      {/* greeting */}
+      <div className="greeting heading">
+       <span className="bold">{(Hour < 12)? 'Good Morning   '
+       : (Hour < 19 )? 'Good Afternoon   '
+       :'Good Night   '} 
+       </span> <span> {user.name}</span>
       </div>
-        </div>
+
+
+      {/*insight section*/}
+
+      <div className="insight">
+
+      <div className="row makeittwo">
+        
+        {Cardsdata.map((data,indx)=>{
+          const {title,content, ...rest} = data
+              return (  <Cards key = {indx}
+                      title = {title}
+                      content = {content}
+                      rest = {rest}
+                   />)
+        })}
+
+
+       <div className="col-lg-4 col-md-12 col-sm-6 profile">
+
+       <div className="flexbox" style={{padding:0}}>
+          <h5>
+            Profile
+          </h5>
+
+          <img src="" alt="profile" className='profileimage' />
+
+          <h6 style={{marginTop:'10px'}}>{user.name}</h6>
+
+           <button className="btn btn-sm btn-success m-1 p-1 " > Change profile picture </button>
+           <button className="btn btn-sm btn-outline-light m-2 p-1" > Change Password </button>
+      </div>
+
+       </div>
+       
+      </div>
+       
       
+
       </div>
-   </div>
+      {/* insight section */}
+
+
+      {/* quick actions */}
+
+      <div className="horizontalflex" style={{justifyContent:"space-between"}}>
+
+      <div className="chart" >
+       <span className="bold" style={{fontSize:'1.5rem',fontWeight:'500'}}>Quick insight</span> 
+       <br />
+        <Chart solditems={solditems}
+               soldunits = {soldunits}
+        />
+      </div>
+
+      <div className="actionbuttons">
+      <span className='bold' style={{fontSize:'1.3rem',fontWeight:'500'}}>Actions</span>
+      <br />
+       {actions.map(({icon,iconcolor,adminreq,name},indx)=>{
+        return <Actionbuttons key = {indx}
+                             icon = {icon}
+                             name = {name}
+                             iconcolor = {iconcolor}
+                             adminreq = {adminreq}/>
+       })}
+      </div>
+         
+      </div>
+   
+
+
+    </div>
   )
 }
 

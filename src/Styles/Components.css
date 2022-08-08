@@ -1,0 +1,44 @@
+.contents {
+    margin-left: 200px;
+    height: 100vh;
+}
+
+@media screen and (max-width:950px)
+{
+    .contents
+    {margin-left:20px;
+        margin-top:30px;
+    }
+    .horizontalflex
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 20px;
+    }
+    .cards 
+    {
+        margin:10px;
+    }
+
+}
+
+.heading 
+{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.flexbox 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.horizontalflex 
+{
+    display: flex;
+    justify-content:space-around;
+    padding:5px;
+}

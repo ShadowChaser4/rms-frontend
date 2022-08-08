@@ -1,5 +1,6 @@
 export default async function logit(user,changestate,navigate,credentials)
 {
+  try{
     let cred = JSON.stringify(credentials)
     let headers = new Headers()
     headers.append("Accept", "application/json")
@@ -23,4 +24,10 @@ export default async function logit(user,changestate,navigate,credentials)
       navigate('/app/home')
     }
     
+  }
+
+  catch(e)
+  {
+    console.log(e.message)
+  }
 }

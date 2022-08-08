@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import './Login.css'
+import '../../Styles/Login.css'
 import usercontext from '../../Contexts/Userdatacontext/Userdatacontext'
 import islogged from './islogged'
 import { useNavigate } from 'react-router-dom'

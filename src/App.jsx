@@ -1,5 +1,4 @@
 import React from "react";
-import Sidebar from './Components/Sidebar/Sidebar';
 import {Routes, Route, Navigate} from 'react-router-dom'
 import Inventory from "./Components/Modules/Inventory/Inventory";
 import Reports from "./Components/Modules/Reports/Reports";
@@ -14,10 +13,9 @@ function App() {
   
   return (
    <>
-    <Userdatastate>
+   <Userdatastate>
    <Somestate>
 
-   <Sidebar/>
    <Routes>
    <Route path = '/login' element = {<Login/>}/>
    <Route element = {<PrivateRoutes/>}>

@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import {NavLink, Link} from 'react-router-dom'
-import './Sidebar.css'
+import '../../Styles/Sidebar.css'
 import { Sidebardata } from "./Sidebardata";
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginContext from "../../Contexts/LoginContext js/LoginContext";
-
+import DensitySmallIcon from '@mui/icons-material/DensitySmall';
 
 export default function Sidebar() 
 {
@@ -14,6 +14,10 @@ export default function Sidebar()
     backgroundColor: 'rgb(8, 108, 133)',
     color: 'whitesmoke'
   } 
+
+
+  //to logout when user clicks the logout button 
+  //a post request is made in the exposed api and then the user gets logout
 
   const handleLogout = async ()=>{
 
@@ -34,6 +38,8 @@ export default function Sidebar()
       {
         changestate(false)
       }
+
+      onSidebarclick()
      
     }
     catch(e)
@@ -43,22 +49,39 @@ export default function Sidebar()
      
    }
 
+////////managing state for sidebar slide 
+  const [sidebarState,changesidebarState] = useState(window.screen.width <950?false:true)
+  
 
+
+ 
+  function onSidebarclick()
+  {
+      changesidebarState(!sidebarState)
+  }
+
+// window.addEventListener('resize',()=>{
+//   changesidebarState(window.screen.width < 950?false:true)
+// })
     return (<>
-      <div className = 'navbar'>
-       <nav className="nav-menu active">
-        <ul className="nav-manu-items">
+      <div  className = 'navbar'>
+      <div  onClick = {onSidebarclick}className="menu-bar" style={{marginLeft:sidebarState?'200px':null}}>
+        <span className="densityicon"><DensitySmallIcon/></span>
+      </div>
+       <nav className={sidebarState? "nav-menu active": 'nav-menu'}>
+        <ul className="nav-menu-items">
         <li className="nav-item" style={{listStyle:'none'}}>
-          <Link to ='/app/home'>
+          <Link onClick = {onSidebarclick}  to ='/app/home'>
             <img src="logo.png" className="image" alt="" />
           </Link>
           <hr style={{marginLeft:'0px', width:'100%'}}/>
         </li>
+
           {Sidebardata.map((item,index)=>{
            return ( 
             <div  key={index}>
             <li id = {index} className = {item.cName}>
-              <NavLink to = {item.path}
+              <NavLink onClick = {onSidebarclick} to = {item.path}
               style={
                 ({isActive})=>{
                    return isActive? activestyle : null;
@@ -73,6 +96,8 @@ export default function Sidebar()
             </div>
             )
           })}
+
+          
           <li className="nav-text" style={{color:'rgb(64, 64, 64)'}}>
            <button className="btn bootstrap-btn btn-sm" onClick={handleLogout} ><LogoutIcon/> Logout</button>
           </li>
