@@ -1,6 +1,6 @@
 import React , {useContext} from 'react'
 import {Navigate, Outlet} from 'react-router-dom'
-import Layout from '../Components/Modules/Layout'
+import Layout from '../Components/Layout'
 import LoginContext from '../Contexts/LoginContext js/LoginContext'
 
 

@@ -11,7 +11,7 @@ export default function Sidebar()
   const {changestate} = useContext(LoginContext)
 
   const activestyle = {
-    backgroundColor: 'rgb(8, 108, 133)',
+    backgroundColor: 'rgb(8, 108, 133,0.9)',
     color: 'whitesmoke'
   } 
 

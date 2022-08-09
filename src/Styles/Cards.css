@@ -1,7 +1,7 @@
 .cards 
 {
     border:1px solid grey;
-    box-shadow: 5px 5px  rgb(206, 199, 199);
+    box-shadow: 5px 5px  rgb(206, 199, 199,0.4);
     padding: 20px;
     width: 190px;
     border-radius: 1rem;
@@ -15,8 +15,8 @@
 
 .cards:hover
 { 
-    border: 2px solid rgb(0,0,189,0.3);
-    box-shadow: 5px 5px  rgb(162, 158, 158);
+    border: 2px solid rgb(0,0,189,0.2);
+    box-shadow: 5px 5px  rgb(162, 158, 158,0.45);
     padding: 20px;
     width: 190px;
     border-radius: 1rem;

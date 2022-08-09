@@ -1,0 +1,28 @@
+
+.navigationcontainer
+{
+    display: flex;
+    justify-content: flex-end;
+}
+.navigationtext 
+{
+   border:1px solid #000044;
+   background-color: #000044;
+   color:white;
+   padding:10px 20px 10px 20px; 
+   margin:0px 5px 0px 5px;
+   border-radius: 0.5rem;
+}
+
+.navigationtext > a 
+{
+    text-decoration: none;
+    color:inherit;
+}
+
+.barchart 
+{
+    width: 600px;
+}
+
+

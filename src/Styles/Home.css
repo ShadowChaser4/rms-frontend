@@ -35,7 +35,7 @@
     border-radius: 1rem;
     text-align: center;
     margin: 5px 20px 2px 60px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .profileimage
@@ -48,14 +48,6 @@
 }
 
 
-@media  screen and (max-width:780px) {
-
-    .profile 
-    {
-        width: 240px;
-    }
-    
-}
 
 .chart 
 {
@@ -92,11 +84,11 @@
     margin-left: 4px;
 }
 
-@media screen and (max-width:540px) {
+@media screen and (max-width:580px) {
     .makeittwo
     {
        display: grid;
-       grid-template-columns: repeat(2,240px);
+       grid-template-columns: repeat(2,210px);
        column-gap: 0;
        grid-template-rows: (auto);
        row-gap: 10px;
@@ -105,4 +97,13 @@
         width: 350px;
     }
 
+}
+
+@media  screen and (max-width:780px) {
+
+    .profile 
+    {
+        width: 240px;
+    }
+    
 }
