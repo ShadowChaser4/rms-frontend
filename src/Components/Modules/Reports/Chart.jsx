@@ -23,8 +23,8 @@ export default function Chart({data}) {
       <Area
         type="monotone"
         dataKey="sales"
-        stroke="rgb(0,10,200,0.4)"
-        fill="rgb(0,10,200,0.1)"
+        stroke="#1C3879"
+        fill="#607EAA"
       />
     </AreaChart>
 </ResponsiveContainer>

@@ -4,8 +4,8 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 
 function ProfitLoss({status,number}) {
     const bool = (status === 'loss')
-    const colour = bool ?'rgb(255,0,0,0.4)':'rgb(0,255,0,0.4)'
-    const border = bool?'rgb(255,0,0,0.8)':'rgb(0,255,0,0.8)'
+    const colour = bool ?'rgb(255,10,20,0.6)':'rgb(10,255,20,0.6)'
+    const border = bool?'rgb(255,10,20,0.8)':'rgb(10,255,20,0.8)'
    const style =  {border:`1px solid ${border}`,
    borderRadius:'0.2rem',
    backgroundColor:colour,

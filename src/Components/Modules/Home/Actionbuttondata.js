@@ -3,6 +3,7 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 
 const actions = [{
     name:'Add user', 
@@ -28,6 +29,11 @@ const actions = [{
     icon: <ManageSearchIcon/>, 
     iconcolor:'#e8b84a',
     adminreq: false
+}, 
+{
+    name: 'Set goals for week', 
+    icon:<TrackChangesIcon/>, 
+    iconcolor: 'rgb(255,20,20,0.8)'
 }]
 
 export default actions

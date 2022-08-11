@@ -31,7 +31,7 @@ export default function Sidebar()
       const res = await fetch('http://localhost:5000/api/auth/logout', {
         method:"POST",  
         headers:headers,
-       credentials:'include'
+        credentials:'include'
       })
   
       if(res.status === 200)
@@ -39,7 +39,6 @@ export default function Sidebar()
         changestate(false)
       }
 
-      onSidebarclick()
      
     }
     catch(e)
@@ -60,9 +59,7 @@ export default function Sidebar()
       changesidebarState(!sidebarState)
   }
 
-// window.addEventListener('resize',()=>{
-//   changesidebarState(window.screen.width < 950?false:true)
-// })
+
     return (<>
       <div  className = 'navbar'>
       <div  onClick = {onSidebarclick}className="menu-bar" style={{marginLeft:sidebarState?'200px':null}}>
