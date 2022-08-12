@@ -71,7 +71,7 @@ export default function Sidebar()
       <div  onClick = {onSidebarclick} className="menu-bar" style={{marginLeft:sidebarState?'200px':null}}>
         <span className="densityicon"><MenuIcon/></span>
       </div>
-       <nav className={sidebarState? "nav-menu active": 'nav-menu'}>
+       <nav className={sidebarState? "nav-menu activea": 'nav-menu'}>
         <ul className="nav-menu-items">
         <li className="nav-item" style={{listStyle:'none'}}>
           <Link onClick = {size <992?onSidebarclick:null}   to ='/app/home'>
@@ -82,8 +82,8 @@ export default function Sidebar()
 
           {Sidebardata.map((item,index)=>{
            return ( 
-            <div  key={index}>
-            <li id = {index} className = {item.cName}>
+            <>
+            <li id = {index} key = {index} className = {item.cName}>
               <NavLink onClick = {size <992?onSidebarclick:null}  to = {item.path}
               style={
                 ({isActive})=>{
@@ -95,8 +95,8 @@ export default function Sidebar()
                 <span className="span">{item.title}</span>
               </NavLink>
             </li>
-            <hr />
-            </div>
+            <hr key = {index +20}/>
+            </>
             )
           })}
 
