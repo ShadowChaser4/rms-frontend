@@ -4,7 +4,8 @@ import '../../Styles/Sidebar.css'
 import { Sidebardata } from "./Sidebardata";
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginContext from "../../Contexts/LoginContext js/LoginContext";
-import DensitySmallIcon from '@mui/icons-material/DensitySmall';
+import MenuIcon from '@mui/icons-material/Menu';
+
 
 export default function Sidebar() 
 {
@@ -49,11 +50,16 @@ export default function Sidebar()
    }
 
 ////////managing state for sidebar slide 
-  const [sidebarState,changesidebarState] = useState(window.screen.width <950?false:true)
+  const [sidebarState,changesidebarState] = useState(window.innerWidth < 992? false:true)
+  const [size, changesize] = useState(window.innerWidth)
+
+  window.addEventListener('resize', ()=>{
+    changesize(window.innerWidth)
+    changesidebarState(window.innerWidth< 992?false:true)
+  })
   
 
 
- 
   function onSidebarclick()
   {
       changesidebarState(!sidebarState)
@@ -62,13 +68,13 @@ export default function Sidebar()
 
     return (<>
       <div  className = 'navbar'>
-      <div  onClick = {onSidebarclick}className="menu-bar" style={{marginLeft:sidebarState?'200px':null}}>
-        <span className="densityicon"><DensitySmallIcon/></span>
+      <div  onClick = {onSidebarclick} className="menu-bar" style={{marginLeft:sidebarState?'200px':null}}>
+        <span className="densityicon"><MenuIcon/></span>
       </div>
        <nav className={sidebarState? "nav-menu active": 'nav-menu'}>
         <ul className="nav-menu-items">
         <li className="nav-item" style={{listStyle:'none'}}>
-          <Link onClick = {onSidebarclick}  to ='/app/home'>
+          <Link onClick = {size <992?onSidebarclick:null}   to ='/app/home'>
             <img src="logo.png" className="image" alt="" />
           </Link>
           <hr style={{marginLeft:'0px', width:'100%'}}/>
@@ -78,7 +84,7 @@ export default function Sidebar()
            return ( 
             <div  key={index}>
             <li id = {index} className = {item.cName}>
-              <NavLink onClick = {onSidebarclick} to = {item.path}
+              <NavLink onClick = {size <992?onSidebarclick:null}  to = {item.path}
               style={
                 ({isActive})=>{
                    return isActive? activestyle : null;

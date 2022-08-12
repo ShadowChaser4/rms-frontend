@@ -1,9 +1,9 @@
 .contents {
-    margin-left: 200px;
+    margin-left: 215px;
     height: 100vh;
 }
 
-@media screen and (max-width:950px)
+@media screen and (max-width:980px)
 {
     .contents
     {margin-left:20px;
