@@ -9,7 +9,7 @@ import Cards from './Cards'
 import './Cardsdata'
 import Cardsdata from './Cardsdata'
 import Chart from './Chart'
-
+import Profile from './Profile'
 
 function Home() {
   const Hour = new Date().getHours()
@@ -27,7 +27,8 @@ function Home() {
        <span className="bold">{(Hour < 12)? 'Good Morning   '
        : (Hour < 19 )? 'Good Afternoon   '
        :'Good Night   '} 
-       </span> <span> {user.name}</span>
+       </span> <br />
+       <span style={{fontSize:'1.2rem'}}> {user.name}</span>
       </div>
 
 
@@ -50,16 +51,7 @@ function Home() {
        <div className="col-lg-4 col-md-12 col-sm-6 profile">
 
        <div className="flexbox" style={{padding:0}}>
-          <h5>
-            Profile
-          </h5>
-
-          <img src="" alt="profile" className='profileimage' />
-
-          <h6 style={{marginTop:'10px'}}>{user.name}</h6>
-
-           <button className="btn btn-sm btn-success m-1 p-1 " > Change profile picture </button>
-           <button className="btn btn-sm btn-outline-light m-2 p-1" > Change Password </button>
+          <Profile user = {user.name}/>
       </div>
 
        </div>

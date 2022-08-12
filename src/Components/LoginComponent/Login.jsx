@@ -45,7 +45,7 @@ function Login()
     return(
       <>
         <div className="container formcontainer"  style={{marginLeft:'400px', marginTop:'100px', textAlign:'center'}}>
-         <form action="" onSubmit = {loginhandler}className="myform">
+         <form className = 'form' action="" onSubmit = {loginhandler}>
           <label htmlFor="email" id = 'email' >Email:
           <input type="email" name='username' className='email' placeholder = 'Enter your email here'onChange={changehandler}  value = {credentials.username}/>
           </label>
