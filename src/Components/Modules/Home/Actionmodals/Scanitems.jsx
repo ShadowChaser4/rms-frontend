@@ -1,10 +1,11 @@
-import { Modal } from "@mui/material";
-import React from "react";
+import { Modal } from "react-bootstrap";
+import React, { useState } from "react";
 import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
 
 
-export default function Scanitems ({open,setOpen}) 
+export default function Scanitems () 
 {
+    const [open,setOpen] = useState(false)
    const  style = {
         backgroundColor:'#666666', 
         color: '#666666'
@@ -13,33 +14,40 @@ export default function Scanitems ({open,setOpen})
     {
         setOpen(false)
     }
-
+    
+    function handleopen(breakpoint) 
+    {
+        setFullscreen(breakpoint)
+        setOpen(true)
+    }
+    const [fullscreen, setFullscreen] = useState('md-down')
     return(
         <>
-         <div className='actionbutton'  style={style}> 
+         <div className='actionbutton' onClick={handleopen} style={style}> 
             <span style={{color:'white'}} className="text"> Scan items </span>
             <span className='icon'><QrCodeScannerIcon/></span>
          </div>
          <Modal
-           open = {open}
-           keepMounted
-           disableScrollLock
-           aria-labelledby="Change Password"
-           sx = {{
-            // backdropFilter: "blur(5px)",
-            margin:'auto', 
-            position:'absolute', 
-            minWidth:'384px', 
-            height:'400px',
-            opacity:1,
-            color:'black',
-            borderRadius:'1.2rem'
-           }}>
-                <div className="container-fluid">
-                    This is scan items modal
+           show = {open}
+           onHide = {handleclose}
+           backdrop = 'static'
+           keyboard = {false}
+           centered
+           size="lg"
+           fullscreen = {'md-down'}
+           >
+           <Modal.Header closeButton>
+            <Modal.Title>Scan items</Modal.Title>
+           </Modal.Header>
 
-                    <button onClick={handleclose}>Click me</button>
-                </div>
+           <Modal.Body>
+           <div className="container-fluid flexbox rounded-3 modalcontainer">
+                  
+                  </div>
+           </Modal.Body>
+
+           <Modal.Footer></Modal.Footer>
+                
            </Modal>
         </>
     )

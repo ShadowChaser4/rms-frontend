@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
-import { Modal } from '@mui/material'
-import CloseIcon from '@mui/icons-material/Close';
-import DoneIcon from '@mui/icons-material/Done';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/Spinner';
 
 
 
-function ChangePassword({open, setOpen}) {
+function ChangePassword({show,setShow}) {
 
-   
-    const handleclose = ()=>{
-        setOpen(false)
+    const handleClose = () =>{
+      setShow (false)
     }
 
     const [passwords, setPasswords] = useState({newpassword1:'',oldpassword:'',newpassword2:''})
@@ -27,9 +26,9 @@ function ChangePassword({open, setOpen}) {
     const [alert,setalert] = useState({severity:'',message:'',showalert:false})
 
     const handlesubmit = (e)=>{
-      if (passwords.newpassword1 == '' || passwords.newpassword2 == '' || passwords.oldpassword == '')
+      if (passwords.newpassword1 === '' || passwords.newpassword2 === '' || passwords.oldpassword === '')
       {
-         setalert({severity:'warning',message:'Empty fields',showalert:true})
+         setalert({severity:'Warning',message:'Empty fields',showalert:true})
         setTimeout(()=>{
           setalert({severity:'',message:'',showalert:false})
         },2000)
@@ -60,13 +59,13 @@ function ChangePassword({open, setOpen}) {
            console.log(json)
            if(res.status === 200)
            {
-              setTimeout(()=>{setOpen(false)},2300)
-              setalert({severity:'success',message:'Changed successfully',showalert:true})
+              setTimeout(()=>{setShow(false)},2300)
+              setalert({severity:'Success',message:'Changed successfully',showalert:true})
 
            }
            else 
            {
-            setalert({severity:'error',message:json.message,showalert:true})
+            setalert({severity:'Error',message:json.message,showalert:true})
            }
            setsumbit(false)
            setTimeout(()=>{
@@ -86,47 +85,47 @@ function ChangePassword({open, setOpen}) {
 
   return (
     <>
-         <Modal 
-           keepMounted
-           disableScrollLock
-           open = {open}
-           aria-labelledby="Change Password"
-           sx = {{
-            // backdropFilter: "blur(5px)",
-            margin:'auto', 
-            position:'absolute', 
-            width:'384px', 
-            height:'400px',
-            opacity:1,
-            color:'black',
-            // border:'3px solid grey',
-            borderRadius:'1.2rem'
-           }}>
-          <>
-           <div className='modalcontainer flexbox' style={{flexDirection:'column', justifyContent:"space-around"}}>
-                <h4 className = ''>
-                    Change Password:
-                </h4>
-                <label htmlFor="oldpassword" className=''>Old Password:
-                <input type="password" name="oldpassword"value={passwords.oldpassword} onChange={handlechange} className='input'   />
+         
+        <Modal 
+        show = {show}
+        onHide = {handleClose}
+        backdrop = 'static'
+        keyboard = {false}
+        centered
+        size='md'
+        >
+        <Modal.Header closeButton>
+         <Modal.Title>Change Password</Modal.Title> 
+        </Modal.Header>
+        <Modal.Body>
+        <div className="container">
+        <label htmlFor="oldpassword" className='input-group mb-3'>Old Password:
+                <input type="password" name="oldpassword" className="form-control border border-dark m-1" value={passwords.oldpassword} onChange={handlechange}   />
                 </label>
                
                 <br />
 
-                <label htmlFor="new passowrd" className=''>New Password:
-                <input type="password" name="newpassword1" value={passwords.newpassword1} onChange={handlechange} className=' input'  />
+                <label htmlFor="new passowrd" className='input-group mb-3'>New Password:
+                <input type="password" name="newpassword1" value={passwords.newpassword1} onChange={handlechange} className="form-control border border-dark m-1" />
                 </label>
                 <br />
 
-                <label htmlFor="confirm new password" className=''>Confirm <br/> New Password:
-                <input type="password" name="newpassword2" value ={passwords.newpassword2} onChange={handlechange} className='input' />
+                <label htmlFor="confirm new password" className='input-group mb-3'>Confirm <br/> New Password:
+                <input type="password" name="newpassword2" value ={passwords.newpassword2} onChange={handlechange} className='form-control border border-dark rounded-3 m-1' />
                 </label>
                 <br/>
+        </div>
+          
+                </Modal.Body>
 
-                <button id = "close" onClick={handleclose}> <CloseIcon/> </button>
-               {!submitting&& <button onClick={handlesubmit} type = 'submit' id = "submit"><DoneIcon/></button>}
+                
+              <Modal.Footer>
+               {!submitting?<button className='btn btn-primary btn-md m-3' onClick={handlesubmit} type = 'submit' id = "submit">Save</button>
+               : <Spinner animation="border" variant="primary" />}
+              </Modal.Footer>
+              
             
-           </div>
+           
            { alert.showalert &&
             <div className="alert">
            <Alert severity={alert.severity}>
@@ -136,12 +135,13 @@ function ChangePassword({open, setOpen}) {
            </div>
          
          }  
-  
-          </>  
-           </Modal>
 
-         
-    </>
+      
+         </Modal>
+          </>  
+           
+
+
   )
 }
 
