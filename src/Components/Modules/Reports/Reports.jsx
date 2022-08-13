@@ -1,52 +1,40 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect , useState} from 'react'
 import PieChart from './PieChart'
 import usercontext from '../../../Contexts/Userdatacontext/Userdatacontext'
 import '../../../Styles/Components.css'
 import '../../../Styles/Reports.css'
 import Chart from './Chart'
-import ProfitLoss from './ProfitLoss'
 import BarChartItem from './BarChart'
 
 
 
 
 function Reports() {
-
-
-  const solditems = ['Breakfast', 'Clothes', 'Cosmetics', 'Bevrages']
-  const soldunits = [12, 19, 3, 5]
-  const average = 60000
-  const customers = 100
-  const data = [
+  const [fetcheddata,changedata] = useState({})
+useEffect(
+  ()=>{
+    async function fetching() 
     {
-      name: "Sun",
-      sales: 4000
-    },
-    {
-      name: "Mon",
-      sales: 3000
-    },
-    {
-      name: "Tues",
-      sales: 2000
-    },
-    {
-      name: "Wed",
-      sales: 2780
-    },
-    {
-      name: "Thur",
-      sales: 1890
-    },
-    {
-      name: "Fri",
-       sales: 2390
-    },
-    {
-      name: "Sat",
-      sales: 3490
+      let headers = new Headers()
+    headers.append("Accept", "application/json")
+    headers.append("Content-Type","application/json")
+    headers.append("Access-Control-Allow-Credentails", 'true')
+    headers.append("Access-Control-Allow-Origin", "http://localhost:5000")
+    const response = await fetch("http://localhost:5000/api/reportsapi?customersvisited=true&totalincome=true&timeline=week",{
+        method:"GET",  
+        headers:headers,
+        credentials:'include'
+    }); 
+    
+    const json = await response.json()
+    const {total,customersvisited} = json
+    changedata({average:parseInt(total/7),customers:customersvisited})  
     }
-  ];
+    fetching()
+  }, []
+)
+
+
   
   const {user} = useContext(usercontext)
   return (
@@ -67,8 +55,7 @@ function Reports() {
       <div className="col-lg-8 col-md-12">
 
            <div className="horizontalflex">
-            <div> Revenue  <ProfitLoss status = 'profit' number={10}/></div>
-            <div>
+            <div> Revenue 
               <select name="timeselect" id="timeselect" >
                 <option value="monthly"  >monthly</option>
                 <option value="weekly" selected >weekly</option>
@@ -77,9 +64,9 @@ function Reports() {
            </div>
             
           <br />
-            {data[data.length -1].sales}
+            {fetcheddata.total}
       
-       {<Chart data = {data}/>}
+       {<Chart/>}
       </div>
 
       <div className="col-lg-4">
@@ -88,12 +75,12 @@ function Reports() {
            <div className="title" style={{padding:'15px'}}>
 
             Weekly average revenue 
-            <ProfitLoss status = 'profit' number = '12'/>
+          
 
             <br />
 
             <span className="greeting bold">
-              {average}
+              {fetcheddata.average}
             </span>
             <hr />
            </div>
@@ -101,10 +88,10 @@ function Reports() {
            <div className="title" style={{padding:'0px 15px 15px 15px'}}>
 
             Customers arrived
-            <ProfitLoss status = 'loss' number = '10'/>
+          
             <br />
             <span className='greeting bold'>
-              {customers}
+              {fetcheddata.customers}
             </span>
            </div>
         </div>
@@ -118,7 +105,7 @@ function Reports() {
           <div className="greeting bold">
             Weekly Summary
           </div>
-          <PieChart solditems={solditems} soldunits={soldunits}/>
+          <PieChart />
         </div>
       </div>
 

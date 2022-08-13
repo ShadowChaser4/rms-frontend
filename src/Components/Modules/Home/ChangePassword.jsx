@@ -27,11 +27,19 @@ function ChangePassword({open, setOpen}) {
     const [alert,setalert] = useState({severity:'',message:'',showalert:false})
 
     const handlesubmit = (e)=>{
-        
+      if (passwords.newpassword1 == '' || passwords.newpassword2 == '' || passwords.oldpassword == '')
+      {
+         setalert({severity:'warning',message:'Empty fields',showalert:true})
+        setTimeout(()=>{
+          setalert({severity:'',message:'',showalert:false})
+        },2000)
+        return
+      }
       async  function sending ()
       {
        try{
            setsumbit(true)
+           
            let cred = JSON.stringify(passwords)
            let headers = new Headers()
            headers.append("Accept", "application/json")
@@ -91,8 +99,7 @@ function ChangePassword({open, setOpen}) {
             height:'400px',
             opacity:1,
             color:'black',
-            zIndex:200, 
-            border:'3px solid grey',
+            // border:'3px solid grey',
             borderRadius:'1.2rem'
            }}>
           <>

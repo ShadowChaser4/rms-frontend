@@ -114,7 +114,7 @@
 {
     border:1px solid grey;
     border-radius: 0.6rem;
-    box-shadow: 5px 5px rgba(200,200,200,0.3);
+    box-shadow: 2px 2px rgba(241, 239, 239, 0.61);
     margin-left: 10px;
 }
 
@@ -126,10 +126,10 @@
 .modalcontainer
 {
     height: 100%;
-    background-color: rgb(255, 255, 255);
-    color:#021818;
+    background-color:#021818 ;
+    color:rgb(255, 255, 255);
     border-radius: 1rem;
-    box-shadow: 5px 5px whitesmoke;
+    box-shadow: 5px 5px rgb(66, 66, 66,0.5);
     padding:15px; 
     line-height: 10px;
     font-size: large;

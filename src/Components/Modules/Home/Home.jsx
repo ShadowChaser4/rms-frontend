@@ -65,19 +65,11 @@ function Home() {
                soldunits = {soldunits}
         />
       </div>
-
-      <div className="actionbuttons">
-      <span className='bold' style={{fontSize:'1.3rem',fontWeight:'500'}}>Actions</span>
-      <br />
-       {actions.map(({icon,iconcolor,adminreq,name},indx)=>{
-        return <Actionbuttons key = {indx}
-                             icon = {icon}
-                             name = {name}
-                             iconcolor = {iconcolor}
-                             adminreq = {adminreq}/>
-       })}
-       {/* <Actions/> */}
+      
+      <div>
+      <Actionbuttons/>
       </div>
+  
          
       </div>
    
