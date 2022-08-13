@@ -1,6 +1,5 @@
 import React,{useContext,useState} from 'react'
 import usercontext from '../../../Contexts/Userdatacontext/Userdatacontext'
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Adduser from './Actionmodals/Adduser';
 import Inventoryedit from './Actionmodals/Inventoryedit';
 import Scanitems from './Actionmodals/Scanitems';
