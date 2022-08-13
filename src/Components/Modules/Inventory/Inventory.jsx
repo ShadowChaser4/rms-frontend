@@ -23,7 +23,7 @@ function Inventory() {
           
     <form onSubmit = {onSubmit} action="">
     <div className="input-group width-50">
-       <input type="text" onChange={changehandler} value = {searchquery} className="form-control" aria-label="Search products"/>
+       <input type="text" onChange={changehandler} value = {searchquery} className="form-control" placeholder = 'Search products'aria-label="Search products"/>
          <button type='submit' className="btn btn-dark input-group-text"> <SearchIcon/> </button>
        </div>
     </form>

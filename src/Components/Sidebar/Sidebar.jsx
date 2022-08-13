@@ -82,8 +82,8 @@ export default function Sidebar()
 
           {Sidebardata.map((item,index)=>{
            return ( 
-            <>
-            <li id = {index} key = {index} className = {item.cName}>
+          < div key = {index} style = {{listStyle:"none"}}>
+            <li id = {index} className = {item.cName}>
               <NavLink onClick = {size <992?onSidebarclick:null}  to = {item.path}
               style={
                 ({isActive})=>{
@@ -95,8 +95,8 @@ export default function Sidebar()
                 <span className="span">{item.title}</span>
               </NavLink>
             </li>
-            <hr key = {index +20}/>
-            </>
+            <hr/>
+            </div>
             )
           })}
 

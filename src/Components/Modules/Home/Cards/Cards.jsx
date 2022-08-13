@@ -1,7 +1,7 @@
 
 import React from 'react'
-import '../../../Styles/Cards.css'
-import Progressbar from './Progressbar'
+import '../../../../Styles/Cards.css'
+import Progressbar from '../Progressbar'
 
 function Cards(props) {
     const {title,content,rest} = props

@@ -43,7 +43,7 @@
 {
     border:1px solid grey;
     border-radius: 100%;
-    width: 100px;
+    width: 170px;
     aspect-ratio: 1;
     margin:auto;
 }
@@ -52,7 +52,7 @@
 
 .chart 
 {
-    width: 470px;
+    width: 490px;
 }
 
 .actionbuttons
@@ -109,3 +109,62 @@
     }
     
 }
+
+.input 
+{
+    border:1px solid grey;
+    border-radius: 0.6rem;
+    box-shadow: 5px 5px rgba(200,200,200,0.3);
+    margin-left: 10px;
+}
+
+.input:focus
+{
+    border:1px solid rgba(0, 0, 255, 0.838);
+}
+
+.modalcontainer
+{
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    color:#021818;
+    border-radius: 1rem;
+    box-shadow: 5px 5px whitesmoke;
+    padding:15px; 
+    line-height: 10px;
+    font-size: large;
+}
+
+
+
+#close
+{
+    position: absolute;
+    top:0; 
+    margin-top: -20px;
+    margin-right: 10px;
+    right: 0;
+    background-color: rgb(164, 10, 10);
+    color:white; 
+    border: 3px solid whitesmoke;
+    box-shadow: 3px 3px rgba(128, 128, 128, 0.689);
+    border-radius: 100%;
+    padding: 10px;
+}
+
+#submit 
+{
+    position: absolute;
+    right: 0;
+    margin-bottom: -20px;
+    margin-right: 10px;
+    bottom: 0;
+    background-color: rgb(3, 97, 3);
+    color:white; 
+    border: 3px solid whitesmoke;
+    box-shadow: 3px 3px rgba(128, 128, 128, 0.689);
+    border-radius: 100%;
+    padding: 10px;
+    width: 50;
+}
+

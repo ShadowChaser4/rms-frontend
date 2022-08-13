@@ -1,19 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import usercontext from '../../../Contexts/Userdatacontext/Userdatacontext'
 import '../../../Styles/Components.css'
 import '../../../Styles/Home.css'
 import actions from './Actionbuttondata'
 import Actionbuttons from './Actionbuttons'
-import './Cards'
-import Cards from './Cards'
-import './Cardsdata'
-import Cardsdata from './Cardsdata'
 import Chart from './Chart'
 import Profile from './Profile'
+import Card from './Cards/Card'
+
 
 function Home() {
-  const Hour = new Date().getHours()
 
+  const Hour = new Date().getHours()
   const {user}= useContext(usercontext)
 
   const solditems = ['Breakfast', 'Clothes', 'Cosmetics', 'Bevrages', 'Foods', 'Cleaning items']
@@ -38,15 +36,7 @@ function Home() {
 
       <div className="row makeittwo">
         
-        {Cardsdata.map((data,indx)=>{
-          const {title,content, ...rest} = data
-              return (  <Cards key = {indx}
-                      title = {title}
-                      content = {content}
-                      rest = {rest}
-                   />)
-        })}
-
+        <Card/>
 
        <div className="col-lg-4 col-md-12 col-sm-6 profile">
 
@@ -86,6 +76,7 @@ function Home() {
                              iconcolor = {iconcolor}
                              adminreq = {adminreq}/>
        })}
+       {/* <Actions/> */}
       </div>
          
       </div>

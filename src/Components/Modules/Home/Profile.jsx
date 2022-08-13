@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import ChangePassword from './ChangePassword'
+
 
 function Profile(props) {
     const [url,changeurl] = useState('')
@@ -31,6 +33,15 @@ function Profile(props) {
         fetching()
   
     },[])
+
+    const [open,setOpen] = useState(false)
+
+      
+    const handleopen = ()=>{
+      setOpen(true)
+    }
+
+
   return (
     <>
         <h5>
@@ -42,7 +53,11 @@ function Profile(props) {
           <h6 style={{marginTop:'10px'}}>{props.name}</h6>
 
            <button className="btn btn-sm btn-success m-1 p-1 " > Change profile picture </button>
-           <button className="btn btn-sm btn-outline-light m-2 p-1" > Change Password </button>
+           <button className="btn btn-sm btn-outline-light m-2 p-1" onClick={handleopen} > Change Password </button>
+            
+          <ChangePassword open = {open} setOpen = {setOpen}/>
+          
+
     </>
   )
 }
