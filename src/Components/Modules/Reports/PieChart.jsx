@@ -1,18 +1,40 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function Chart({solditems,soldunits}) 
+export default function Chart() 
 {
+  const [fetcheddata,changedata] = useState({})
+
+  useEffect(()=>{
+    async function fetching() 
+    {
+      let headers = new Headers()
+     headers.append("Accept", "application/json")
+     headers.append("Content-Type","application/json")
+     headers.append("Access-Control-Allow-Credentails", 'true')
+     headers.append("Access-Control-Allow-Origin", "http://localhost:5000")
+     const response = await fetch("http://localhost:5000/api/reportsapi?piedata=true&timeline=month",{
+         method:"GET",  
+         headers:headers,
+         credentials:'include'
+     }); 
+     
+     const json = await response.json()
+      const {piedata} = json
+      changedata({solditems:Object.keys(piedata),totalsold:Object.values(piedata)})  
+    }
+    fetching()
+  },[])
 
     const data = {
-        labels: solditems,
+        labels: fetcheddata.solditems,
         datasets: [
           {
             label: '# of Sales',
-            data:soldunits ,
+            data:fetcheddata.totalsold ,
             backgroundColor: [
               'rgba(255,0,0, 0.5)',
               'rgba(0,255,100, 0.5)',
