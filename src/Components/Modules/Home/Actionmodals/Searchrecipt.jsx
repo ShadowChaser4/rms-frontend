@@ -159,7 +159,7 @@ try {
                    </div>
                    <div className="m-3">
                     <span style={{fontWeight:'bold'}}>Discount:</span>
-                    <span>{results.discount}</span>
+                    <span>{results.discount}%</span>
                    </div>
                    <div className="m-3">
                     <span style={{fontWeight:'bold'}}>Grand total:</span>

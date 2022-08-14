@@ -15,14 +15,7 @@ export default function Scanitems ()
     const [alert,setalert] = useState({severity:'',message:'',showalert:false})
 
     const [show1,setShow1] = useState(false)
-   function handleopen2()
-   {
-    setShow1(true)
-   }
-   function handleclose2()
-   {
-    setShow1(false)
-   }
+
 
    const  style = {
         backgroundColor:'#666666', 
@@ -38,6 +31,15 @@ export default function Scanitems ()
         setFullscreen(breakpoint)
         setOpen(true)
     }
+    function handleopen2()
+    {
+     setShow1(true)
+    }
+    function handleclose2()
+    {
+     setShow1(false)
+    }
+    
     const [fullscreen, setFullscreen] = useState('md-down')
 
     // for modal
@@ -385,7 +387,7 @@ const handlename = (e)=>{
                    </div>
                    <div className="m-3">
                     <span style={{fontWeight:'bold'}}>Discount:</span>
-                    <span>{results.discount}</span>
+                    <span>{results.discount}%</span>
                    </div>
                    <div className="m-3">
                     <span style={{fontWeight:'bold'}}>Grand total:</span>
