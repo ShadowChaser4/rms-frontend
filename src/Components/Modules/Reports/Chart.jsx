@@ -21,7 +21,6 @@ export default function Chart() {
      }); 
      
      const json = await response.json()
-     console.log(json)
       changedata(json)  
     }
     fetching()

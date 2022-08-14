@@ -3,6 +3,7 @@ import usercontext from '../../../Contexts/Userdatacontext/Userdatacontext'
 import Adduser from './Actionmodals/Adduser';
 import Inventoryedit from './Actionmodals/Inventoryedit';
 import Scanitems from './Actionmodals/Scanitems';
+import Searchrecipt from './Actionmodals/Searchrecipt';
 import Setgoals from './Actionmodals/Setgoals';
 
 
@@ -26,6 +27,7 @@ function Actionbuttons({icon,iconcolor,name,adminreq}) {
 
       {admin && <Inventoryedit/>}
       {admin && <Setgoals/>}
+      {admin && <Searchrecipt/>}
 
       </div>
 

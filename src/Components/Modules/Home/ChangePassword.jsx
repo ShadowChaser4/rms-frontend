@@ -28,7 +28,7 @@ function ChangePassword({show,setShow}) {
     const handlesubmit = (e)=>{
       if (passwords.newpassword1 === '' || passwords.newpassword2 === '' || passwords.oldpassword === '')
       {
-         setalert({severity:'Warning',message:'Empty fields',showalert:true})
+         setalert({severity:'warning',message:'Empty fields',showalert:true})
         setTimeout(()=>{
           setalert({severity:'',message:'',showalert:false})
         },2000)
@@ -60,12 +60,12 @@ function ChangePassword({show,setShow}) {
            if(res.status === 200)
            {
               setTimeout(()=>{setShow(false)},2300)
-              setalert({severity:'Success',message:'Changed successfully',showalert:true})
+              setalert({severity:'success',message:'Changed successfully',showalert:true})
 
            }
            else 
            {
-            setalert({severity:'Error',message:json.message,showalert:true})
+            setalert({severity:'error',message:json.message,showalert:true})
            }
            setsumbit(false)
            setTimeout(()=>{

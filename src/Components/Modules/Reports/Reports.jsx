@@ -55,11 +55,7 @@ useEffect(
       <div className="col-lg-8 col-md-12">
 
            <div className="horizontalflex">
-            <div> Revenue 
-              <select name="timeselect" id="timeselect" >
-                <option value="monthly"  >monthly</option>
-                <option value="weekly" selected >weekly</option>
-              </select>
+            <div> Weekly Revenue
             </div>
            </div>
             
