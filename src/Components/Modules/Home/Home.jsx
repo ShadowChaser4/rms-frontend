@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext,useEffect} from 'react'
 import usercontext from '../../../Contexts/Userdatacontext/Userdatacontext'
 import '../../../Styles/Components.css'
 import '../../../Styles/Home.css'
@@ -7,8 +7,8 @@ import Chart from './Chart'
 import Profile from './Profile'
 import Card from './Cards/Card'
 
-
 function Home() {
+
 
   const Hour = new Date().getHours()
   const {user}= useContext(usercontext)

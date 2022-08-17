@@ -22,7 +22,7 @@ const islogged = async(user,navigate,changestate)=>{
         const {username,admin,name} = json
         user.changeuserstate({username:username,admin:admin,name:name})
         changestate(true)
-        navigate('/app/home')
+        setTimeout(()=>{navigate('/app/home')},1)
       }
       if(res.status === 403)
       {

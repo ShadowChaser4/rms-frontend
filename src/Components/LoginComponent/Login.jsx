@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react'
 import '../../Styles/Login.css'
 import usercontext from '../../Contexts/Userdatacontext/Userdatacontext'
 import islogged from './islogged'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useLocation } from 'react-router-dom'
 import LoginContext from '../../Contexts/LoginContext js/LoginContext'
 import logit from './logit'
 
@@ -13,6 +13,8 @@ function Login()
    const user = useContext(usercontext)
    const navigate = useNavigate()
    const {changestate} = useContext(LoginContext)
+   const location = useLocation()
+   console.log(location)
 
     useEffect(()=>{
       islogged(user,navigate,changestate)
